@@ -36,23 +36,30 @@
         android:layout_weight="1"
         android:text="@string/app_name"
         android:textColor="#dce3eb"
-        android:textSize="24sp"
+        android:textSize="@dimen/_24sdp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/endingline"
         app:layout_constraintStart_toStartOf="@+id/staringline"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/linear"
         android:layout_width="0dp"
-        android:orientation="horizontal"
         android:layout_height="0dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/endingline"
+        app:layout_constraintStart_toStartOf="@id/staringline"
         app:layout_constraintTop_toTopOf="@+id/mainpart"
         app:layout_constraintVertical_bias="0.0">
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Button" />
+    </RelativeLayout>
 
 
 
