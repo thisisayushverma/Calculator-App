@@ -69,13 +69,15 @@
             style="@style/btnstyle"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:gravity="center_horizontal|center_vertical"
             android:text="C"
             android:textColor="#C5C6C6"
             app:layout_constraintBottom_toTopOf="@+id/btnhguide1"
             app:layout_constraintEnd_toStartOf="@+id/btnguide1"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button18"
@@ -147,10 +149,11 @@
             android:textColor="#C5C6C6"
             app:layout_constraintBottom_toTopOf="@+id/btnhguide4"
             app:layout_constraintEnd_toStartOf="@+id/btnguide2"
-            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnguide1"
             app:layout_constraintStart_toStartOf="@+id/btnguide1"
-            app:layout_constraintTop_toBottomOf="@+id/button9"
-            app:layout_constraintVertical_bias="0.631" />
+            app:layout_constraintTop_toBottomOf="@+id/btnhguide3"
+            app:layout_constraintVertical_bias="0.5" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button16"
@@ -193,9 +196,9 @@
             style="@style/btnstyle"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:text="A"
+            android:text="AC"
             android:textColor="#C5C6C6"
-            android:textSize="@dimen/_20sdp"
+            android:textSize="@dimen/_18sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnguide1"
             app:layout_constraintStart_toStartOf="parent"
@@ -292,12 +295,15 @@
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_marginEnd="8dp"
-            android:text="1"
             android:textColor="#C5C6C6"
+            app:icon="@drawable/backspace"
             app:layout_constraintBottom_toTopOf="@+id/btnhguide1"
             app:layout_constraintEnd_toStartOf="@+id/btnguide2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnguide1"
             app:layout_constraintStart_toStartOf="@+id/btnguide1"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.594" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button2"
@@ -361,6 +367,32 @@
             app:layout_constraintGuide_percent="0.75" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/reseltView"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="="
+        android:textColor="#C5C6C6"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@+id/linear"
+        app:layout_constraintEnd_toStartOf="@+id/endingline"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/staringline"
+        app:layout_constraintTop_toBottomOf="@+id/getstring"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/getstring"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:textColor="#C5C6C6"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@+id/reseltView"
+        app:layout_constraintEnd_toStartOf="@+id/endingline"
+        app:layout_constraintStart_toStartOf="@+id/staringline"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintVertical_bias="0.5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
