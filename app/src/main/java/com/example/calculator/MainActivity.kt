@@ -21,16 +21,12 @@ import kotlin.ArithmeticException
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mainxml:ActivityMainBinding
-
-    private var vis=false
     private lateinit var exp:Expression
     private var count=0
-    private var checkch=false
-
-
-
+//    functions
     private fun solve(){
-        val txt =mainxml.stringView.text.toString()
+//    if(mainxml.reseltView.text=="") return
+    val txt =mainxml.stringView.text.toString()
 
         exp=ExpressionBuilder(txt).build()
 
@@ -42,17 +38,25 @@ class MainActivity : AppCompatActivity() {
             count=1
         }catch (ex:ArithmeticException){
             Log.e("Exception",ex.toString())
-            var str="ERROR"
+            val str="ERROR"
             mainxml.reseltView.text=str
             count=0
         }catch (ex:IllegalArgumentException){
-            Log.e("Exception",ex.toString());
-            var str="ERROR"
+            Log.e("Exception",ex.toString())
+            val str="ERROR"
             mainxml.reseltView.text=str
             count=0
         }
     }
-
+//    private fun sethei(view: View){
+//        val txtview=view as TextView
+//        val parhei=view.parent as?View
+//        if(parhei is ViewGroup){
+//            val hei=parhei.height
+//            val txthei=(0.15*hei).toInt()
+//            txtview.layoutParams.height=txthei
+//        }
+//    }
     private fun setmar(textView:TextView){
         val laymar=textView.layoutParams
 
@@ -68,9 +72,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    private fun dis(vis:Boolean){
-        mainxml.reseltView.visibility = vis.toString().toInt()
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainxml = ActivityMainBinding.inflate(layoutInflater)
@@ -78,6 +79,12 @@ class MainActivity : AppCompatActivity() {
         mainxml.heading.viewTreeObserver.addOnGlobalLayoutListener {
             setmar(mainxml.heading)
         }
+//        mainxml.stringView.viewTreeObserver.addOnGlobalLayoutListener {
+//            sethei(mainxml.stringView)
+//        }
+//        mainxml.reseltView.viewTreeObserver.addOnGlobalLayoutListener {
+//            sethei(mainxml.reseltView)
+//        }
 }
 
     fun getcal(view: View) {
@@ -109,9 +116,9 @@ class MainActivity : AppCompatActivity() {
         }
         if(btn==mainxml.btnBack){
             if(mainxml.stringView.text=="") return
-            var txt= mainxml.stringView.text.toString()
+            val txt= mainxml.stringView.text.toString()
             if(txt[txt.length-1].toString()==".") count--
-            var res=txt.substring(0,txt.length-1)
+            val res=txt.substring(0,txt.length-1)
             println(res)
             mainxml.stringView.text=res
             var ch=res
@@ -123,7 +130,7 @@ class MainActivity : AppCompatActivity() {
         var prevstr=mainxml.stringView.text.toString()
         if(btn==mainxml.btnDot && count==0){
             prevstr += btn.text.toString()
-            count++;
+            count++
         }
         if(btn!=mainxml.btnBack && btn!=mainxml.btnDot) prevstr += btn.text.toString()
 
